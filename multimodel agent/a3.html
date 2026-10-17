@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A3 Poster - AI Speech Analysis</title>
+    
+    <!-- Import Mermaid.js to render a crisp vector architecture diagram -->
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true, theme: 'base', themeVariables: { primaryColor: '#f0f4f8', lineColor: '#1164a3', fontFamily: 'Roboto' } });
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
+
+        /* Force exact A3 Print Dimensions */
+        @page {
+            size: A3 portrait;
+            margin: 0;
+        }
+        body {
+    margin: 0;
+    padding: 0;
+    background-color: #555;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    /* This line shrinks the rendering so it doesn't spill onto a second page */
+    transform: scale(0.95); 
+    transform-origin: top center;
+}
+
+        
+
+        /* The actual A3 Canvas */
+        .a3-canvas {
+            width: 297mm;
+            height: 420mm;
+            background-color: #ffffff;
+            box-sizing: border-box;
+            padding: 12mm;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            background: linear-gradient(135deg, #ffffff 0%, #f0f4f8 100%);
+        }
+
+        /* Header Area */
+        .header {
+            text-align: center;
+            margin-bottom: 8mm;
+            padding-bottom: 6mm;
+            border-bottom: 4px solid #1164a3;
+        }
+
+        .header h1 {
+            font-size: 34pt;
+            font-weight: 900;
+            color: #0a2540;
+            margin: 0 0 4mm 0;
+            line-height: 1.1;
+        }
+
+        .header h2 {
+            font-size: 16pt;
+            font-weight: 500;
+            color: #1164a3;
+            margin: 0 0 2mm 0;
+        }
+
+        .header p {
+            font-size: 14pt;
+            font-weight: 700;
+            color: #444;
+            margin: 0;
+        }
+
+        /* Top 2 Columns Layout */
+        .top-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8mm;
+            margin-bottom: 8mm;
+        }
+
+        /* Standard Box Styling */
+        .box {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 6mm;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+            border-top: 6px solid #1164a3;
+        }
+
+        .box h3 {
+            margin-top: 0;
+            font-size: 16pt;
+            color: #0a2540;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 2mm;
+            text-transform: uppercase;
+        }
+
+        .box p, .box li {
+            font-size: 12pt;
+            line-height: 1.6;
+            color: #334155;
+            margin-bottom: 2mm;
+        }
+
+        /* Center Diagram Section */
+        .diagram-section {
+            background: #ffffff;
+            border-radius: 10px;
+            padding: 6mm;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+            border-top: 6px solid #2e8b57;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 8mm;
+        }
+
+        .diagram-section h3 {
+            margin-top: 0;
+            font-size: 16pt;
+            color: #0a2540;
+            width: 100%;
+            text-align: center;
+            text-transform: uppercase;
+            margin-bottom: 4mm;
+        }
+
+        /* Bottom 3 Columns Layout */
+        .bottom-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6mm;
+        }
+        
+        .bottom-grid .box:nth-child(3) {
+            grid-column: span 2;
+        }
+        
+        .bottom-grid .box {
+            border-top: 6px solid #d97706;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="a3-canvas">
+        
+        <!-- HEADER -->
+        <div class="header">
+            <h1>AI-DRIVEN CLINICAL SPEECH PROCESSING FOR EARLY ALZHEIMER'S SCREENING</h1>
+            <h2>A Multimodal Deep Learning Framework via Gated Cross-Modal Attention</h2>
+            <p>Authors: Dr. K. Jayanthi, Harish R | Vel Tech Rangarajan Dr. Sagunthala R&D Institute of Science and Technology</p>
+        </div>
+
+        <!-- TOP ROW -->
+        <div class="top-grid">
+            <div class="box">
+                <h3>Introduction & Objective</h3>
+                <ul>
+                    <li><strong>The Problem:</strong> Early detection of Alzheimer’s disease (AD) relies on invasive and costly neuroimaging. By the time clinical symptoms appear, irreversible damage has occurred.</li>
+                    <li><strong>The Solution:</strong> Speech acts as a non-invasive digital biomarker. AI can detect subtle acoustic and linguistic anomalies years before memory loss.</li>
+                    <li><strong>Objective:</strong> To build a scalable machine learning framework that detects Mild Cognitive Impairment (MCI) using raw clinical audio recordings.</li>
+                </ul>
+            </div>
+            
+            <div class="box">
+                <h3>System Methodology</h3>
+                <ul>
+                    <li><strong>Data Acquisition:</strong> Spontaneous speech samples (e.g., picture description tasks) from clinical datasets.</li>
+                    <li><strong>Speech Denoising & ASR:</strong> Advanced filtering isolates voice; Automated Speech Recognition transcribes audio while preserving hesitations and pauses.</li>
+                    <li><strong>Dual-Stream Modeling:</strong> Utilizing WavLM for acoustic embeddings and ClinicalBERT for domain-specific linguistic tokens.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- MIDDLE ROW (ARCHITECTURE DIAGRAM) -->
+        <div class="diagram-section">
+            <h3>Acoustic-Linguistic Fusion via Cross-Modal Attention</h3>
+            <!-- Mermaid Vector Graph -->
+            <div class="mermaid">
+                graph TD
+                    subgraph Audio Stream
+                    A[Raw Clinical Audio] -->|Speech Denoising| B(Clean Waveform)
+                    B -->|Self-Supervised| C[WavLM Acoustic Embeddings]
+                    end
+                    
+                    subgraph Text Stream
+                    A -->|Medical ASR| D(Transcripts)
+                    D -->|Transformers| E[ClinicalBERT Text Tokens]
+                    end
+                    
+                    C --> F((Cross-Modal Attention Layer))
+                    E --> F
+                    
+                    F -->|Gated Fusion| G[PyTorch Conformer]
+                    G --> H{Classification Head}
+                    
+                    H -->|Prediction| I[Healthy Control]
+                    H -->|Prediction| J[Mild Cognitive Impairment / AD]
+                    
+                    style A fill:#e1f5fe,stroke:#0288d1
+                    style C fill:#bbdefb,stroke:#1976d2
+                    style E fill:#c8e6c9,stroke:#388e3c
+                    style F fill:#ffe0b2,stroke:#f57c00,stroke-width:2px
+                    style H fill:#e1bee7,stroke:#8e24aa
+            </div>
+        </div>
+
+        <!-- BOTTOM ROW -->
+        <div class="bottom-grid">
+            <div class="box">
+                <h3>Key Features & Biomarkers</h3>
+                <p><strong>Acoustic Biomarkers:</strong></p>
+                <ul>
+                    <li>Reduced prosody (pitch variability).</li>
+                    <li>Increased pause lengths and slow speech rate.</li>
+                    <li>Changes in phonation and articulation.</li>
+                </ul>
+                <p><strong>Linguistic Biomarkers:</strong></p>
+                <ul>
+                    <li>Reduced vocabulary and lexical diversity.</li>
+                    <li>Syntactic simplification.</li>
+                    <li>Lower pronoun-to-noun ratios.</li>
+                </ul>
+            </div>
+
+            <div class="box">
+                <h3>Performance & Accuracy</h3>
+                <ul>
+                    <li><strong>High Precision:</strong> Cross-modal attention effectively captures the correlation between *what* is said and *how* it is spoken.</li>
+                    <li><strong>Accuracy:</strong> Multimodal systems routinely outperform single-modality approaches, achieving up to 89-93% diagnostic accuracy.</li>
+                    <li><strong>Early Detection:</strong> Identifies MCI markers up to 6 years prior to clinical AD onset.</li>
+                </ul>
+            </div>
+
+            <div class="box">
+                <h3>Conclusion & Future Work</h3>
+                <p>The integration of WavLM and ClinicalBERT through a PyTorch Conformer represents a highly effective, low-cost screening tool.</p>
+                <p><strong>Future Applications:</strong> Deployment of this AI framework as a remote diagnostic application, enabling frequent, non-invasive cognitive assessments in standard clinical workflows.</p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

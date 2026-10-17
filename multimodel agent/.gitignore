@@ -1,0 +1,27 @@
+# Python cache & compiled files
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Large model binaries / PyTorch checkpoints
+*.pt
+*.pth
+*.bin
+
+# Node dependencies (if present in frontend)
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+# Ignore large dataset feature files & data directories
+*.txt
+*.csv
+backend/data/
+multimodel agent/backend/data/
